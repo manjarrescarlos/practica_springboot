@@ -10,18 +10,18 @@ import java.util.Map;
 import java.util.HashMap;
 import com.informaticonfig.spring.models.Empleados;
 
+import com.informaticonfig.spring.models.dto.ClaseDto;
+
 @RestController
 @RequestMapping("/api")
 public class EjemploRestController {
 
     @GetMapping(path = "/detalles_info2")
-
-    public Map<String, Object> detalles_info2(){
-        Empleados empleado1= new Empleados("Juan", "Pérez", "Calle Falsa 123", "Desarrollador", 30, 123456789, 1);
-
-        Map<String, Object> respuesta = new HashMap<>();
-        respuesta.put("Empleado", empleado1);
-        return respuesta;
+    public ClaseDto detalles_info2() {
+        ClaseDto usuario1 = new ClaseDto();
+        usuario1.setTitulo("administrador");
+        usuario1.setUsuario("Juan Pérez");
+        return usuario1;
     }
 
 }
